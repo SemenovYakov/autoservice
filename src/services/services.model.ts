@@ -1,4 +1,12 @@
-import { Column, DataType, Model, Table } from 'sequelize-typescript';
+import {
+  BelongsToMany,
+  Column,
+  DataType,
+  Model,
+  Table,
+} from 'sequelize-typescript';
+import { Booking } from 'src/booking/booking.model';
+import { User } from 'src/users/users.model';
 
 interface PostCreationAttrs {
   title: string;
@@ -24,4 +32,7 @@ export class Services extends Model<Services, PostCreationAttrs> {
 
   @Column({ type: DataType.STRING, allowNull: false })
   imageURL: string;
+
+  @BelongsToMany(() => User, () => Booking)
+  users: User[];
 }

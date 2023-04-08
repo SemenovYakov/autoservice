@@ -1,7 +1,15 @@
-import { Column, DataType, Model, Table, HasMany } from 'sequelize-typescript';
+import {
+  BelongsToMany,
+  Column,
+  DataType,
+  Model,
+  Table,
+} from 'sequelize-typescript';
+import { Booking } from 'src/booking/booking.model';
+import { Services } from 'src/services/services.model';
 
 interface UserCreationAttrs {
-  email: string;
+  phone: number;
   password: string;
 }
 
@@ -20,10 +28,9 @@ export class User extends Model<User, UserCreationAttrs> {
   @Column({ type: DataType.STRING, allowNull: false })
   surname: string;
   @Column({ type: DataType.STRING, unique: true, allowNull: false })
-  email: string;
-
+  phone: number;
   @Column({ type: DataType.STRING, allowNull: false })
   password: string;
-  //  @HasMany(() => Post)
-  // posts: Post[];
+  @BelongsToMany(() => Services, () => Booking)
+  services: Services[];
 }
