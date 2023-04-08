@@ -9,4 +9,8 @@ export class UsersController {
   getById(@Param('value') value: string) {
     return this.userService.findUserById(value);
   }
+  @Get('/users')
+  allusers() {
+    return this.userService.findAll();
+  }
 }
