@@ -16,11 +16,11 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     SequelizeModule.forRoot({
       dialect: 'mysql',
-      host: 'localhost',
-      port: 3306,
+      host: 'containers-us-west-15.railway.app',
+      port: 6161,
       username: 'root',
-      password: '',
-      database: 'auto',
+      password: '9FXgEUW17eYbLDjoR3tS',
+      database: 'railway',
       models: [User, Services, Booking],
       autoLoadModels: true,
     }),
