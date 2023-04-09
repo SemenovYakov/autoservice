@@ -5,12 +5,12 @@ import { UsersService } from './users.service';
 export class UsersController {
   constructor(private userService: UsersService) {}
 
-  @Get('/:value')
-  getById(@Param('value') value: string) {
+  @Get('/:id')
+  getById(@Param('id') value: string) {
     return this.userService.findUserById(value);
   }
   
-  @Get('/users')
+  @Get()
   allusers() {
     return this.userService.findAll();
   }

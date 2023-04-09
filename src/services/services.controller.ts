@@ -4,7 +4,7 @@ import { ServicesService } from './services.service';
 @Controller('services')
 export class ServicesController {
   constructor(private servicesService: ServicesService) {}
-  @Get('/allservices')
+  @Get()
   getAllServices() {
     this.servicesService.getAllServices();
   }
