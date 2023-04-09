@@ -9,7 +9,7 @@ import { Booking } from 'src/booking/booking.model';
 import { Services } from 'src/services/services.model';
 
 interface UserCreationAttrs {
-  phone: number;
+  phone: string;
   password: string;
 }
 
@@ -28,7 +28,7 @@ export class User extends Model<User, UserCreationAttrs> {
   @Column({ type: DataType.STRING, allowNull: false })
   surname: string;
   @Column({ type: DataType.STRING, unique: true, allowNull: false })
-  phone: number;
+  phone: string;
   @Column({ type: DataType.STRING, allowNull: false })
   password: string;
   @BelongsToMany(() => Services, () => Booking)
