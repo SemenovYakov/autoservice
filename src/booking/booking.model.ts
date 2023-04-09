@@ -22,5 +22,5 @@ export class Booking extends Model<Booking> {
   userId: number;
   @ForeignKey(() => Services)
   @Column({ type: DataType.INTEGER })
-  serviceId: string;
+  serviceId: number;
 }
