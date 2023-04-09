@@ -8,13 +8,10 @@ import {
 import { Booking } from 'src/booking/booking.model';
 import { Services } from 'src/services/services.model';
 
-interface UserCreationAttrs {
-  phone: string;
-  password: string;
-}
+
 
 @Table({ tableName: 'users' })
-export class User extends Model<User, UserCreationAttrs> {
+export class User extends Model<User> {
   @Column({
     type: DataType.INTEGER,
     unique: true,

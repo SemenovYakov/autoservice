@@ -8,14 +8,8 @@ import {
 import { Booking } from 'src/booking/booking.model';
 import { User } from 'src/users/users.model';
 
-interface PostCreationAttrs {
-  title: string;
-  content: string;
-  imageURL: string;
-}
-
 @Table({ tableName: 'services' })
-export class Services extends Model<Services, PostCreationAttrs> {
+export class Services extends Model<Services> {
   @Column({
     type: DataType.INTEGER,
     unique: true,
