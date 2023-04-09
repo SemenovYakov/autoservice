@@ -6,6 +6,6 @@ export class ServicesController {
   constructor(private servicesService: ServicesService) {}
   @Get()
   getAllServices() {
-    this.servicesService.getAllServices();
+    return this.servicesService.getAllServices();
   }
 }
