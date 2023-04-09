@@ -6,8 +6,8 @@ export class UsersController {
   constructor(private userService: UsersService) {}
 
   @Get('/:id')
-  getById(@Param('id') value: string) {
-    return this.userService.findUserById(value);
+  getById(@Param('id') value: number) {
+    return this.userService.findUserBookingByUserId(value);
   }
   
   @Get()

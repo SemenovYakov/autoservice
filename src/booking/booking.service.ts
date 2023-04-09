@@ -13,12 +13,4 @@ export class BookingService {
     const user = await this.bookingRepository.create(dto);
     return user;
   }
-  async findUserBookingByUserId(id: number) {
-    const res = await this.bookingRepository.findAll({
-    where: {
-        userId: id
-    },
-   include: [{ all: true }]});
-    return res;
-  }
 }

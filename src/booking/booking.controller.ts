@@ -9,11 +9,4 @@ export class BookingController {
   create(@Body() dto: CreateBookingDto) {
     return this.bookingService.createBooking(dto)
   }
-
-   @Get('/:id')
-  getById(@Param('id') value: number) {
-    return this.bookingService.findUserBookingByUserId(value);
-  }
-
-   
 }

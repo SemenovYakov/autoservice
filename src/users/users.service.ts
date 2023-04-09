@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { User } from './users.model';
 import { CreateUserDto } from './dto/createUserDto';
+import { Services } from 'src/services/services.model';
 
 @Injectable()
 export class UsersService {
@@ -28,4 +29,9 @@ export class UsersService {
     const user = await this.userRepository.findOne({ where: { phone } });
     return user;
   }
+
+    async findUserBookingByUserId(id: number) {
+    const res = await this.userRepository.findByPk(id,{ include: Services})
+    return res;
+}
 }
